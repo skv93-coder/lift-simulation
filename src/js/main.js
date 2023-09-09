@@ -33,8 +33,10 @@ const moveLif = (currFloor) => {
         nearest = Math.min(nearest, Math.abs(currFloor - Number(currLevel)));
         nearestTag = freeLifts[j];
       }
-      if (Number(currLevel) === currFloor) {
-        return;
+      if (Number(currLevel) === Number(currFloor)) {
+        nearest = Math.min(nearest, Math.abs(currFloor - Number(currLevel)));
+        nearestTag = freeLifts[j];
+        break;
       }
     }
 
@@ -47,10 +49,11 @@ const moveLif = (currFloor) => {
     setTimeout(() => {
       setTimeout(() => {
         nearestTag.classList.add("free");
-        delete q[currFloor];
+
         const newDest = Object.entries(q).find((n) => !n[1].moving);
 
         console.log("newDest", newDest);
+        delete q[currFloor];
         if (newDest) {
           // q[newDest[0] - 1] = { moving: true };
           moveLif(newDest[0]);
