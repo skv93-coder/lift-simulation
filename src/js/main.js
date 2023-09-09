@@ -4,6 +4,14 @@ const q = {};
 const start = () => {
   floors = getElById("floors").value;
   lifts = getElById("lifts").value;
+  if (lifts > 4) {
+    getElById("alert").innerText = "Reduce the no of lifts";
+    return;
+  }
+  if (floors > 10) {
+    getElById("alert").innerText = "Reduce the no of floors";
+    return;
+  }
   if (lifts >= floors) {
     console.log("lifts,floors", lifts, floors);
     getElById("alert").innerText =
