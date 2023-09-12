@@ -5,6 +5,22 @@ body {
 #alert {
   color: red;
 }
+.game_outer {
+  height: 77vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+.game_inner {
+  padding: 40px;
+  background-color: beige;
+  display: grid;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.floor_input {
+  width: 255px;
+  height: 40px;
+}
 .lift-container {
   width: 100vw;
   /* background-color: ; */
@@ -36,7 +52,7 @@ body {
   transition: all 3s ease;
 }
 #game_box {
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
   position: relative;
 }
 /* .leftSide {
@@ -56,4 +72,13 @@ body {
 .animation > div {
   animation: liftLeft 3000ms;
   width: 100%;
+}
+.back_box {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+}
+#back {
+  padding: 4px 12px;
+  border-radius: 5px;
 }
