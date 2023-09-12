@@ -44,8 +44,8 @@ const moveLif = () => {
       currFloor - nearestTag.getAttribute("level")
     );
     const timeToMove =
-      2.5 * (Math.abs(currFloor - nearestTag.getAttribute("level")) + 1);
-    nearestTag.style.transition = "bottom " + timeToMove + "s ease";
+      2 * (Math.abs(currFloor - nearestTag.getAttribute("level")) + 1);
+    nearestTag.style.transition = "bottom " + timeToMove + "s linear";
     nearestTag.style.bottom = (floors - currFloor - 1) * 101 + "px";
 
     nearestTag.setAttribute("level", currFloor);
@@ -102,7 +102,8 @@ const run = () => {
     lift.setAttribute("level", Number(floors));
     lift.style.width = 100 + "px";
     lift.style.bottom = "-100px";
-    lift.style.left = 12 * (i + 1) + i * 10 + "%";
+    lift.style.left =
+      (window.innerHeight > 700 ? 0 : 22) + 10 * (i + 1) + i * 10 + "%";
 
     const leftSide = document.createElement("div");
     // const rightSide = document.createElement("div");
@@ -145,7 +146,7 @@ const restartGame = () => {
   liftsInput.setAttribute("placeholder", "Lifts");
   liftsInput.setAttribute("required", "true");
   liftsInput.setAttribute("type", "number");
-  liftsInput.setAttribute("max", "4");
+  liftsInput.setAttribute("max", window.innerHeight > 700 ? "4" : "2");
   liftsInput.setAttribute("min", "1");
   gameInner.appendChild(liftsInput);
   gameInner.appendChild(document.createElement("br"));

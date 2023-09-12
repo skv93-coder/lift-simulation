@@ -37,7 +37,7 @@ body {
 }
 .lift {
   position: absolute;
-  transition: bottom 3s ease;
+  transition: bottom 3s linear;
   /* transform: scaleX(0.01); */
   border: 1px solid;
 }
@@ -49,7 +49,7 @@ body {
 .floor,
 .lift {
   height: 100px;
-  transition: all 3s ease;
+  transition: all 3s linear;
 }
 #game_box {
   /* padding-bottom: 100px; */
