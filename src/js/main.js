@@ -23,10 +23,7 @@ const moveLif = () => {
     for (let j = 0; j < freeLifts.length; j++) {
       const currLevel = freeLifts[j].getAttribute("level");
 
-      if (
-        nearest > Math.abs(currFloor - Number(currLevel)) &&
-        Number(currLevel) !== Number(currFloor)
-      ) {
+      if (nearest > Math.abs(currFloor - Number(currLevel))) {
         nearest = Math.min(nearest, Math.abs(currFloor - Number(currLevel)));
         nearestTag = freeLifts[j];
       }
