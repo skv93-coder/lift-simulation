@@ -1,6 +1,6 @@
 const getElById = (id) => document.getElementById(id);
 let floors, lifts;
-const q = [];
+let q = [];
 const start = (ev) => {
   ev.preventDefault();
   floors = Number(getElById("floors").value);
@@ -115,6 +115,7 @@ const run = () => {
   getElById("game_box").appendChild(liftContainer);
 };
 const restartGame = () => {
+  q=[]
   getElById("back").style.display = "none";
   const gameBox = getElById("game_box");
   gameBox.innerHTML = null;
