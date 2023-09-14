@@ -85,7 +85,7 @@ const run = () => {
 
     side.appendChild(upBtn);
     side.appendChild(downBtn);
-    side.style.width = "100px";
+    side.style.width = "50px";
     floor.appendChild(side);
     game_box.appendChild(floor);
   }
@@ -97,10 +97,9 @@ const run = () => {
     lift.classList.add("lift");
     lift.classList.add("free");
     lift.setAttribute("level", Number(floors));
-    lift.style.width = 100 + "px";
+    lift.style.width = (window.innerWidth > 390 ? 50 : 25) + "px";
     lift.style.bottom = "-100px";
-    lift.style.left =
-      (window.innerHeight > 700 ? 0 : 12) + 10 * (i + 1) + i * 10 + "%";
+    lift.style.left = 5 + i * 10 + "%";
 
     const leftSide = document.createElement("div");
     // const rightSide = document.createElement("div");
@@ -115,7 +114,7 @@ const run = () => {
   getElById("game_box").appendChild(liftContainer);
 };
 const restartGame = () => {
-  q=[]
+  q = [];
   getElById("back").style.display = "none";
   const gameBox = getElById("game_box");
   gameBox.innerHTML = null;
@@ -144,7 +143,7 @@ const restartGame = () => {
   liftsInput.setAttribute("placeholder", "Lifts");
   liftsInput.setAttribute("required", "true");
   liftsInput.setAttribute("type", "number");
-  liftsInput.setAttribute("max",10);
+  liftsInput.setAttribute("max", "10");
   liftsInput.setAttribute("min", "1");
   gameInner.appendChild(liftsInput);
   gameInner.appendChild(document.createElement("br"));
@@ -161,7 +160,7 @@ const restartGame = () => {
   floorsInput.setAttribute("required", true);
   floorsInput.setAttribute("type", "number");
 
-  floorsInput.setAttribute("max", "10");
+  floorsInput.setAttribute("max", "15");
   floorsInput.setAttribute("min", "2");
   gameInner.appendChild(floorsInput);
   gameInner.appendChild(document.createElement("br"));
