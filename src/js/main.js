@@ -100,7 +100,7 @@ const run = () => {
     lift.style.width = 100 + "px";
     lift.style.bottom = "-100px";
     lift.style.left =
-      (window.innerHeight > 700 ? 0 : 22) + 10 * (i + 1) + i * 10 + "%";
+      (window.innerHeight > 700 ? 0 : 12) + 10 * (i + 1) + i * 10 + "%";
 
     const leftSide = document.createElement("div");
     // const rightSide = document.createElement("div");
@@ -144,7 +144,7 @@ const restartGame = () => {
   liftsInput.setAttribute("placeholder", "Lifts");
   liftsInput.setAttribute("required", "true");
   liftsInput.setAttribute("type", "number");
-  liftsInput.setAttribute("max", window.innerHeight > 700 ? "4" : "2");
+  liftsInput.setAttribute("max",10);
   liftsInput.setAttribute("min", "1");
   gameInner.appendChild(liftsInput);
   gameInner.appendChild(document.createElement("br"));
